@@ -207,25 +207,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-JH-y3m">
                                         <rect key="frame" x="0.0" y="0.0" width="190" height="70"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVK-V1-M5k">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVK-V1-M5k">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="0.77920880960000005" green="0.77796026259999995" blue="0.79976926810000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Crw-GY-ffC"/>
                                                     <constraint firstAttribute="width" secondItem="hVK-V1-M5k" secondAttribute="height" multiplier="1:1" id="KZS-SM-u8B"/>
                                                 </constraints>
-                                                <state key="normal" title="한식">
+                                                <state key="normal" backgroundImage="food">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bun-Hw-9pj">
                                                 <rect key="frame" x="120" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="0.77920880960000005" green="0.77796026259999995" blue="0.79976926810000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="AKT-1k-o6d"/>
                                                     <constraint firstAttribute="width" secondItem="Bun-Hw-9pj" secondAttribute="height" multiplier="1:1" id="C10-wQ-KFu"/>
                                                 </constraints>
-                                                <state key="normal" title="치킨">
+                                                <state key="normal" backgroundImage="turkey">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -234,25 +232,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1YN-cl-jPZ">
                                         <rect key="frame" x="0.0" y="120" width="190" height="70"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEF-nY-OBW">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEF-nY-OBW">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="0.77920880960000005" green="0.77796026259999995" blue="0.79976926810000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="GzC-YL-lss"/>
                                                     <constraint firstAttribute="width" secondItem="LEF-nY-OBW" secondAttribute="height" multiplier="1:1" id="dMG-gY-n90"/>
                                                 </constraints>
-                                                <state key="normal" title="피자">
+                                                <state key="normal" backgroundImage="pizza">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBU-eO-frf">
                                                 <rect key="frame" x="120" y="0.0" width="70" height="70"/>
-                                                <color key="backgroundColor" red="0.77920880960000005" green="0.77796026259999995" blue="0.79976926810000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FBU-eO-frf" secondAttribute="height" multiplier="1:1" id="Pbo-2v-8Pp"/>
                                                     <constraint firstAttribute="width" constant="70" id="mqi-OP-1Cm"/>
                                                 </constraints>
-                                                <state key="normal" title="야식">
+                                                <state key="normal" backgroundImage="burger">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -1083,21 +1079,26 @@
         <!--View Controller-->
         <scene sceneID="4d2-Kt-Gvr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NhZ-yv-4iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="vJO-w9-8yr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ng-TU-opV">
                         <rect key="frame" x="0.0" y="0.0" width="271" height="262"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="p2J-t8-2zh"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NhZ-yv-4iy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3233" y="1536"/>
         </scene>
     </scenes>
     <resources>
         <image name="22" width="150" height="40"/>
+        <image name="burger" width="32" height="32"/>
+        <image name="food" width="32" height="32"/>
         <image name="heartEmpty" width="62" height="62"/>
+        <image name="pizza" width="32" height="32"/>
         <image name="tabbar_home" width="20" height="20"/>
+        <image name="turkey" width="32" height="32"/>
     </resources>
 </document>
