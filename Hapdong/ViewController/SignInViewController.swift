@@ -13,6 +13,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("메롱")
+        print("메롱12")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
