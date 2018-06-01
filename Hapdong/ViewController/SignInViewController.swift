@@ -14,14 +14,13 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         print("메롱")
         print("메롱12")
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func signUpClick(_ sender: Any) {
+        performSegue(withIdentifier: "signUpSegue", sender: self)
     }
-
+    
 
 }
 

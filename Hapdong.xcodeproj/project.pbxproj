@@ -15,6 +15,14 @@
 		CC4E2DF820B2642F00D2F6D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4E2DF620B2642F00D2F6D0 /* LaunchScreen.storyboard */; };
 		CC4E2E0020B2667200D2F6D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E2DFF20B2667200D2F6D0 /* SignUpViewController.swift */; };
 		CC4E2E0320B27C6200D2F6D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E2E0220B27C6200D2F6D0 /* MainViewController.swift */; };
+		CCC7717A20C1295E0025DF9D /* BookMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717920C1295E0025DF9D /* BookMarkTableViewController.swift */; };
+		CCC7717C20C129CF0025DF9D /* MarketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717B20C129CF0025DF9D /* MarketTableViewController.swift */; };
+		CCC7717E20C12A050025DF9D /* MarketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717D20C12A050025DF9D /* MarketDetailViewController.swift */; };
+		CCC7718020C12B510025DF9D /* DetailOfMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717F20C12B510025DF9D /* DetailOfMenuViewController.swift */; };
+		CCC7718220C12B630025DF9D /* DetailOfInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7718120C12B630025DF9D /* DetailOfInfoViewController.swift */; };
+		CCC7718420C12B720025DF9D /* DetailOfReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7718320C12B720025DF9D /* DetailOfReviewViewController.swift */; };
+		CCC7718620C12D930025DF9D /* RegisterMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7718520C12D930025DF9D /* RegisterMarketViewController.swift */; };
+		CCC7718820C12EE60025DF9D /* RegisterReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7718720C12EE60025DF9D /* RegisterReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +37,14 @@
 		CC4E2DF920B2642F00D2F6D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC4E2DFF20B2667200D2F6D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CC4E2E0220B27C6200D2F6D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CCC7717920C1295E0025DF9D /* BookMarkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewController.swift; sourceTree = "<group>"; };
+		CCC7717B20C129CF0025DF9D /* MarketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableViewController.swift; sourceTree = "<group>"; };
+		CCC7717D20C12A050025DF9D /* MarketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDetailViewController.swift; sourceTree = "<group>"; };
+		CCC7717F20C12B510025DF9D /* DetailOfMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfMenuViewController.swift; sourceTree = "<group>"; };
+		CCC7718120C12B630025DF9D /* DetailOfInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfInfoViewController.swift; sourceTree = "<group>"; };
+		CCC7718320C12B720025DF9D /* DetailOfReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfReviewViewController.swift; sourceTree = "<group>"; };
+		CCC7718520C12D930025DF9D /* RegisterMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMarketViewController.swift; sourceTree = "<group>"; };
+		CCC7718720C12EE60025DF9D /* RegisterReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReviewViewController.swift; sourceTree = "<group>"; };
 		E2CD760EA94FDD2BD4137B31 /* Pods-Hapdong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hapdong.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hapdong/Pods-Hapdong.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +114,14 @@
 				CC4E2DEF20B2642F00D2F6D0 /* SignInViewController.swift */,
 				CC4E2DFF20B2667200D2F6D0 /* SignUpViewController.swift */,
 				CC4E2E0220B27C6200D2F6D0 /* MainViewController.swift */,
+				CCC7717920C1295E0025DF9D /* BookMarkTableViewController.swift */,
+				CCC7717B20C129CF0025DF9D /* MarketTableViewController.swift */,
+				CCC7717D20C12A050025DF9D /* MarketDetailViewController.swift */,
+				CCC7717F20C12B510025DF9D /* DetailOfMenuViewController.swift */,
+				CCC7718120C12B630025DF9D /* DetailOfInfoViewController.swift */,
+				CCC7718320C12B720025DF9D /* DetailOfReviewViewController.swift */,
+				CCC7718520C12D930025DF9D /* RegisterMarketViewController.swift */,
+				CCC7718720C12EE60025DF9D /* RegisterReviewViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -221,9 +245,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC7717A20C1295E0025DF9D /* BookMarkTableViewController.swift in Sources */,
+				CCC7718620C12D930025DF9D /* RegisterMarketViewController.swift in Sources */,
+				CCC7717C20C129CF0025DF9D /* MarketTableViewController.swift in Sources */,
+				CCC7718820C12EE60025DF9D /* RegisterReviewViewController.swift in Sources */,
+				CCC7718420C12B720025DF9D /* DetailOfReviewViewController.swift in Sources */,
 				CC4E2E0020B2667200D2F6D0 /* SignUpViewController.swift in Sources */,
+				CCC7717E20C12A050025DF9D /* MarketDetailViewController.swift in Sources */,
+				CCC7718220C12B630025DF9D /* DetailOfInfoViewController.swift in Sources */,
 				CC4E2DF020B2642F00D2F6D0 /* SignInViewController.swift in Sources */,
 				CC4E2DEE20B2642F00D2F6D0 /* AppDelegate.swift in Sources */,
+				CCC7718020C12B510025DF9D /* DetailOfMenuViewController.swift in Sources */,
 				CC4E2E0320B27C6200D2F6D0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

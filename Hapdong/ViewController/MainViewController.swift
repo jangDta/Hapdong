@@ -10,26 +10,46 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var koreanFoodButton: UIButton!
+    @IBOutlet weak var chickenButton: UIButton!
+    @IBOutlet weak var pizzaButton: UIButton!
+    @IBOutlet weak var hamburgerButton: UIButton!
+    var selectedMenu = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func mainMenuClick(_ sender: UIButton) {
+        switch sender{
+        case koreanFoodButton:
+            selectedMenu = "한식"
+            break
+        case chickenButton:
+            selectedMenu = "치킨"
+            break
+        case pizzaButton:
+            selectedMenu = "피자"
+            break
+        case hamburgerButton:
+            selectedMenu = "햄버거"
+            break
+        default:
+            break
+        }
+        performSegue(withIdentifier: "selectMenuSegue", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? MarketTableViewController{
+            destination.navigationItem.title = selectedMenu
+        }
     }
-    */
+   
 
 }
