@@ -88,6 +88,38 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		22E89D1B20C2B36A00D4E4FE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC4E2DF120B2642F00D2F6D0 /* Main.storyboard */,
+				CC4E2DF620B2642F00D2F6D0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		22E89D1C20C2B39500D4E4FE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CC4E2DF420B2642F00D2F6D0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		22E89D1D20C2B3D400D4E4FE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				22E89D1E20C2B3E800D4E4FE /* Model */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		22E89D1E20C2B3E800D4E4FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3E63477977F83AA3281896CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +149,11 @@
 		CC4E2DEC20B2642F00D2F6D0 /* Hapdong */ = {
 			isa = PBXGroup;
 			children = (
-				CC4E2E0120B2668200D2F6D0 /* ViewController */,
 				CC4E2DED20B2642F00D2F6D0 /* AppDelegate.swift */,
-				CC4E2DF120B2642F00D2F6D0 /* Main.storyboard */,
-				CC4E2DF420B2642F00D2F6D0 /* Assets.xcassets */,
-				CC4E2DF620B2642F00D2F6D0 /* LaunchScreen.storyboard */,
+				22E89D1B20C2B36A00D4E4FE /* Storyboard */,
+				CC4E2E0120B2668200D2F6D0 /* ViewController */,
+				22E89D1D20C2B3D400D4E4FE /* Util */,
+				22E89D1C20C2B39500D4E4FE /* Assets */,
 				CC4E2DF920B2642F00D2F6D0 /* Info.plist */,
 			);
 			path = Hapdong;
