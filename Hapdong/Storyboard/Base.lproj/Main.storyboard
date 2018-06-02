@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dsa-Vt-zUb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="11k-H7-T7Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -682,8 +682,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ash-4g-wqN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="등록하기" id="ela-Xt-czq"/>
+                    <navigationItem key="navigationItem" title="등록하기" id="ela-Xt-czq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UGy-Oy-o9w">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="menuContentPlusTextField" destination="6r2-MW-brL" id="BNT-Od-gO7"/>
+                        <outlet property="reviewScrollview" destination="ytF-B4-Bh6" id="yag-pf-r3h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4L7-OA-fQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -773,7 +781,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rsu-AN-jea"/>
                     </view>
-                    <navigationItem key="navigationItem" title="리뷰 등록하기" id="tcG-rT-yZS"/>
+                    <navigationItem key="navigationItem" title="리뷰 등록하기" id="tcG-rT-yZS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="37e-7y-dV6">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aug-SZ-8Dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1027,9 +1039,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="가게 설명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4b-B1-x91">
                                 <rect key="frame" x="16" y="242" width="69" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="24F-x6-NzV"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1041,7 +1050,7 @@
                                     <constraint firstAttribute="width" secondItem="0f2-IO-hrj" secondAttribute="height" multiplier="49:34" id="AEj-v3-2qb"/>
                                     <constraint firstAttribute="width" constant="343" id="m7k-Vc-v5E"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
