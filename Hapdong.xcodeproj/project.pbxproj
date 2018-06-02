@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22E89D1120C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1020C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift */; };
+		22E89D1520C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1420C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift */; };
+		22E89D1820C2AD3700D4E4FE /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1720C2AD3700D4E4FE /* BookMarkTableViewCell.swift */; };
+		22E89D1A20C2AEAC00D4E4FE /* MarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1920C2AEAC00D4E4FE /* MarketTableViewCell.swift */; };
 		5414E0D14BD1530DC8E086AE /* Pods_Hapdong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2DD29C74E6498EDC28462F /* Pods_Hapdong.framework */; };
 		CC4E2DEE20B2642F00D2F6D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E2DED20B2642F00D2F6D0 /* AppDelegate.swift */; };
 		CC4E2DF020B2642F00D2F6D0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E2DEF20B2642F00D2F6D0 /* SignInViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22E89D1020C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfMenuTableViewCell.swift; sourceTree = "<group>"; };
+		22E89D1420C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfReviewTableViewCell.swift; sourceTree = "<group>"; };
+		22E89D1720C2AD3700D4E4FE /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
+		22E89D1920C2AEAC00D4E4FE /* MarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableViewCell.swift; sourceTree = "<group>"; };
 		3B2DD29C74E6498EDC28462F /* Pods_Hapdong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hapdong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E34FC18C57B31B8EBC10D65 /* Pods-Hapdong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hapdong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hapdong/Pods-Hapdong.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4E2DEA20B2642F00D2F6D0 /* Hapdong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hapdong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +75,17 @@
 				E2CD760EA94FDD2BD4137B31 /* Pods-Hapdong.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		22E89D1620C2AD0400D4E4FE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				22E89D1020C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift */,
+				22E89D1420C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift */,
+				22E89D1720C2AD3700D4E4FE /* BookMarkTableViewCell.swift */,
+				22E89D1920C2AEAC00D4E4FE /* MarketTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3E63477977F83AA3281896CC /* Frameworks */ = {
@@ -111,6 +130,7 @@
 		CC4E2E0120B2668200D2F6D0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				22E89D1620C2AD0400D4E4FE /* Cell */,
 				CC4E2DEF20B2642F00D2F6D0 /* SignInViewController.swift */,
 				CC4E2DFF20B2667200D2F6D0 /* SignUpViewController.swift */,
 				CC4E2E0220B27C6200D2F6D0 /* MainViewController.swift */,
@@ -249,12 +269,16 @@
 				CCC7718620C12D930025DF9D /* RegisterMarketViewController.swift in Sources */,
 				CCC7717C20C129CF0025DF9D /* MarketTableViewController.swift in Sources */,
 				CCC7718820C12EE60025DF9D /* RegisterReviewViewController.swift in Sources */,
+				22E89D1120C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift in Sources */,
 				CCC7718420C12B720025DF9D /* DetailOfReviewViewController.swift in Sources */,
 				CC4E2E0020B2667200D2F6D0 /* SignUpViewController.swift in Sources */,
 				CCC7717E20C12A050025DF9D /* MarketDetailViewController.swift in Sources */,
 				CCC7718220C12B630025DF9D /* DetailOfInfoViewController.swift in Sources */,
 				CC4E2DF020B2642F00D2F6D0 /* SignInViewController.swift in Sources */,
 				CC4E2DEE20B2642F00D2F6D0 /* AppDelegate.swift in Sources */,
+				22E89D1A20C2AEAC00D4E4FE /* MarketTableViewCell.swift in Sources */,
+				22E89D1820C2AD3700D4E4FE /* BookMarkTableViewCell.swift in Sources */,
+				22E89D1520C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift in Sources */,
 				CCC7718020C12B510025DF9D /* DetailOfMenuViewController.swift in Sources */,
 				CC4E2E0320B27C6200D2F6D0 /* MainViewController.swift in Sources */,
 			);
