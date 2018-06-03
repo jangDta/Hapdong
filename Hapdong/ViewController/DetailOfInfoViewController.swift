@@ -12,7 +12,7 @@ class DetailOfInfoViewController: UIViewController {
 
     @IBOutlet weak var marketImageView: UIImageView!
     @IBOutlet weak var reviewNumLabel: UILabel!
-    @IBOutlet weak var marketContentTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

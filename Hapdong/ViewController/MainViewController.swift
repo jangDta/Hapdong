@@ -15,12 +15,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pizzaButton: UIButton!
     @IBOutlet weak var hamburgerButton: UIButton!
     var selectedMenu = ""
+    let userDefault = UserDefaults.standard
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(userDefault.string(forKey: "user_id"))
     }
 
     

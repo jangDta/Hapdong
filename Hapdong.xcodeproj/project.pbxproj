@@ -19,6 +19,7 @@
 		CC4E2DF820B2642F00D2F6D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC4E2DF620B2642F00D2F6D0 /* LaunchScreen.storyboard */; };
 		CC4E2E0020B2667200D2F6D0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E2DFF20B2667200D2F6D0 /* SignUpViewController.swift */; };
 		CC4E2E0320B27C6200D2F6D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E2E0220B27C6200D2F6D0 /* MainViewController.swift */; };
+		CC7820B720C3E99500DC187F /* ExtensionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7820B620C3E99500DC187F /* ExtensionControl.swift */; };
 		CCC7717A20C1295E0025DF9D /* BookMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717920C1295E0025DF9D /* BookMarkTableViewController.swift */; };
 		CCC7717C20C129CF0025DF9D /* MarketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717B20C129CF0025DF9D /* MarketTableViewController.swift */; };
 		CCC7717E20C12A050025DF9D /* MarketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7717D20C12A050025DF9D /* MarketDetailViewController.swift */; };
@@ -45,6 +46,7 @@
 		CC4E2DF920B2642F00D2F6D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC4E2DFF20B2667200D2F6D0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CC4E2E0220B27C6200D2F6D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CC7820B620C3E99500DC187F /* ExtensionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionControl.swift; sourceTree = "<group>"; };
 		CCC7717920C1295E0025DF9D /* BookMarkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewController.swift; sourceTree = "<group>"; };
 		CCC7717B20C129CF0025DF9D /* MarketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableViewController.swift; sourceTree = "<group>"; };
 		CCC7717D20C12A050025DF9D /* MarketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDetailViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				22E89D1D20C2B3D400D4E4FE /* Util */,
 				22E89D1C20C2B39500D4E4FE /* Assets */,
 				CC4E2DF920B2642F00D2F6D0 /* Info.plist */,
+				CC7820B620C3E99500DC187F /* ExtensionControl.swift */,
 			);
 			path = Hapdong;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				22E89D1820C2AD3700D4E4FE /* BookMarkTableViewCell.swift in Sources */,
 				22E89D1520C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift in Sources */,
 				CCC7718020C12B510025DF9D /* DetailOfMenuViewController.swift in Sources */,
+				CC7820B720C3E99500DC187F /* ExtensionControl.swift in Sources */,
 				CC4E2E0320B27C6200D2F6D0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

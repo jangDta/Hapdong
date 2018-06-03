@@ -7,21 +7,64 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
+    var isReady : Bool {
+        get{
+            return !((idTextField.text?.isEmpty)!) && !((pwTextField.text?.isEmpty)!)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func signUpClick(_ sender: Any) {
+        if isReady{
+            let URL = "http://13.124.11.199:3000/user/signup"
+            let body: [String: Any] = [
+                "user_id" : gsno(idTextField.text),
+                "user_pw" : gsno(pwTextField.text)
+            ]
+            Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData(){ res in
+                switch res.result{
+                case .success:
+                    if let value = res.result.value{
+                        if let message = JSON(value)["message"].string{
+                            if message == "Successfully Sign Up"{
+                                self.navigationController?.popViewController(animated: true)
+                            }else if message == "Already Exists"{
+                                let alertView = UIAlertController(title: "중복", message: "이미 존재하는 아이디입니다.", preferredStyle: .alert)
+                                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                                alertView.addAction(ok)
+                                self.present(alertView, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                    
+                    break
+                case .failure(let err):
+                    print("err......")
+                    print(err.localizedDescription)
+                    break
+                }
+            }
+        }else{
+            self.signUpButton.shake()
+        }
     }
     
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 

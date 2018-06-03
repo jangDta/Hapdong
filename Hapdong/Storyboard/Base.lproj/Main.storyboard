@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="11k-H7-T7Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8pQ-OD-MeY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +56,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4aQ-MT-ff5"/>
+                                            <action selector="signInClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hpg-LS-rXM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZD-OP-xdb">
@@ -71,8 +71,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="joinAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="73Y-7F-cQZ"/>
-                                            <action selector="signUpClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSe-8U-ahL"/>
+                                            <action selector="signUpClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0J-9M-Ajb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -94,11 +93,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="로그인" id="mfs-Tv-2Rk"/>
                     <connections>
-                        <outlet property="idTextField" destination="fbj-Qy-p4j" id="bzs-Ws-CyT"/>
-                        <outlet property="joinButton" destination="XZD-OP-xdb" id="Eow-ia-2P3"/>
-                        <outlet property="loginButton" destination="rTI-aA-yuR" id="Taq-b8-r9k"/>
-                        <outlet property="pwdTextField" destination="a66-uj-MVx" id="Kb4-YN-fd3"/>
-                        <segue destination="KpF-eq-Acd" kind="push" identifier="signUpSegue" id="qqK-Bt-QyY"/>
+                        <outlet property="idTextField" destination="fbj-Qy-p4j" id="eEk-CV-7lk"/>
+                        <outlet property="pwTextField" destination="a66-uj-MVx" id="NBm-NM-oLx"/>
+                        <outlet property="signInButton" destination="rTI-aA-yuR" id="Nhp-Ft-oxM"/>
+                        <segue destination="KpF-eq-Acd" kind="push" identifier="singUpSegue" id="J3V-2n-cWA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,7 +106,7 @@
         <!--회원가입-->
         <scene sceneID="ALg-k3-RWv">
             <objects>
-                <viewController storyboardIdentifier="JoinViewController" title="회원가입" id="KpF-eq-Acd" customClass="SignUpViewController" customModule="Hapdong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" title="회원가입" id="KpF-eq-Acd" customClass="SignUpViewController" customModule="Hapdong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1zq-5Q-6hV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +138,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinAction:" destination="KpF-eq-Acd" eventType="touchUpInside" id="SIc-YE-k3j"/>
+                                    <action selector="signUpClick:" destination="KpF-eq-Acd" eventType="touchUpInside" id="mMx-Jr-7Hj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,9 +157,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="회원가입" id="GkZ-KS-6BJ"/>
                     <connections>
-                        <outlet property="idTextField" destination="pUo-xO-Msh" id="5QI-by-uTL"/>
-                        <outlet property="joinButton" destination="aKW-cs-RrS" id="BTi-dG-Hkc"/>
-                        <outlet property="pwdTextField" destination="1xM-Vz-bPf" id="OpE-xg-c0d"/>
+                        <outlet property="idTextField" destination="pUo-xO-Msh" id="Mb8-wC-Osp"/>
+                        <outlet property="pwTextField" destination="1xM-Vz-bPf" id="MQs-lX-8Fo"/>
+                        <outlet property="signUpButton" destination="aKW-cs-RrS" id="tSc-rz-ZCq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ZG-dc-9tR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1196,7 +1194,7 @@
         <scene sceneID="iKo-RS-IG3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Yi-Og-EtD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="tabbar_home" id="Q6W-Gl-GJI">
+                    <tabBarItem key="tabBarItem" title="" image="home" id="Q6W-Gl-GJI">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
@@ -1225,8 +1223,9 @@
         <scene sceneID="6sp-u7-dML">
             <objects>
                 <navigationController storyboardIdentifier="BookMarkVCNavi" automaticallyAdjustsScrollViewInsets="NO" id="Hyl-ue-BKf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="heartEmpty" id="EFx-z6-2Jo">
-                        <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="5"/>
+                    <tabBarItem key="tabBarItem" title="" image="like" id="EFx-z6-2Jo">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tb2-nz-9Dz">
@@ -1312,9 +1311,9 @@
         <image name="22" width="150" height="40"/>
         <image name="burger" width="32" height="32"/>
         <image name="food" width="32" height="32"/>
-        <image name="heartEmpty" width="62" height="62"/>
+        <image name="home" width="25" height="25"/>
+        <image name="like" width="25" height="25"/>
         <image name="pizza" width="32" height="32"/>
-        <image name="tabbar_home" width="20" height="20"/>
         <image name="turkey" width="32" height="32"/>
     </resources>
 </document>
