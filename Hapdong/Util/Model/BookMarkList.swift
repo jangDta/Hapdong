@@ -1,5 +1,5 @@
 //
-//  Review.swift
+//  BookMarkList.swift
 //  Hapdong
 //
 //  Created by 김예은 on 2018. 6. 4..
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Review: Codable {
-    let content: String
-    let image: String
-    let user_id: String
-    let store_idx: Int
+struct BookMarkList: Codable {
+    let store_name: String
+    let store_img: String
+    let count: String
 }

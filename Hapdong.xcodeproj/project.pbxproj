@@ -14,6 +14,8 @@
 		2259FE1220C453F600CFD46B /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259FE1120C453F600CFD46B /* ReviewService.swift */; };
 		2259FE1420C45E5B00CFD46B /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259FE1320C45E5B00CFD46B /* List.swift */; };
 		2259FE1620C45E6300CFD46B /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259FE1520C45E6300CFD46B /* ListData.swift */; };
+		2259FE1A20C510DF00CFD46B /* BookMarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259FE1920C510DF00CFD46B /* BookMarkList.swift */; };
+		2259FE1C20C512BA00CFD46B /* BookMarkListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259FE1B20C512BA00CFD46B /* BookMarkListData.swift */; };
 		22E89D1120C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1020C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift */; };
 		22E89D1520C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1420C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift */; };
 		22E89D1820C2AD3700D4E4FE /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E89D1720C2AD3700D4E4FE /* BookMarkTableViewCell.swift */; };
@@ -49,6 +51,8 @@
 		2259FE1120C453F600CFD46B /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		2259FE1320C45E5B00CFD46B /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		2259FE1520C45E6300CFD46B /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		2259FE1920C510DF00CFD46B /* BookMarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkList.swift; sourceTree = "<group>"; };
+		2259FE1B20C512BA00CFD46B /* BookMarkListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkListData.swift; sourceTree = "<group>"; };
 		22E89D1020C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfMenuTableViewCell.swift; sourceTree = "<group>"; };
 		22E89D1420C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfReviewTableViewCell.swift; sourceTree = "<group>"; };
 		22E89D1720C2AD3700D4E4FE /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,11 +121,13 @@
 				CC7820BD20C4179500DC187F /* StoreMenuData.swift */,
 				CC7820BB20C4172F00DC187F /* StoreMenu.swift */,
 				2259FE0D20C452D600CFD46B /* Review.swift */,
-				2259FE0F20C453D500CFD46B /* ReviewData.swift */,
 				2259FE1320C45E5B00CFD46B /* List.swift */,
 				2259FE1520C45E6300CFD46B /* ListData.swift */,
+				2259FE0F20C453D500CFD46B /* ReviewData.swift */,
 				CC4AFB8320C4DE90005C9CCF /* Store.swift */,
 				CC4AFB8520C4DEC2005C9CCF /* StoreData.swift */,
+				2259FE1920C510DF00CFD46B /* BookMarkList.swift */,
+				2259FE1B20C512BA00CFD46B /* BookMarkListData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				2259FE1220C453F600CFD46B /* ReviewService.swift in Sources */,
 				CCC7717A20C1295E0025DF9D /* BookMarkTableViewController.swift in Sources */,
 				CCC7718620C12D930025DF9D /* RegisterMarketViewController.swift in Sources */,
+				2259FE1A20C510DF00CFD46B /* BookMarkList.swift in Sources */,
 				CCC7717C20C129CF0025DF9D /* MarketTableViewController.swift in Sources */,
 				CCC7718820C12EE60025DF9D /* RegisterReviewViewController.swift in Sources */,
 				22E89D1120C2AAEC00D4E4FE /* DetailOfMenuTableViewCell.swift in Sources */,
@@ -371,6 +378,7 @@
 				2259FE1420C45E5B00CFD46B /* List.swift in Sources */,
 				22E89D1820C2AD3700D4E4FE /* BookMarkTableViewCell.swift in Sources */,
 				2259FE0820C44F5700CFD46B /* APIService.swift in Sources */,
+				2259FE1C20C512BA00CFD46B /* BookMarkListData.swift in Sources */,
 				2259FE0E20C452D600CFD46B /* Review.swift in Sources */,
 				22E89D1520C2AC1B00D4E4FE /* DetailOfReviewTableViewCell.swift in Sources */,
 				CCC7718020C12B510025DF9D /* DetailOfMenuViewController.swift in Sources */,
