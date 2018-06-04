@@ -14,6 +14,7 @@ class MarketDetailViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var heartButton: UIBarButtonItem!
     
     var store_name = ""
     var store_idx = 0
@@ -85,6 +86,14 @@ class MarketDetailViewController: UIViewController {
         
     }
 
+    @IBAction func heartButtonClick(_ sender: Any) {
+        networkAddBookmark()
+        print("heart!!")
+    }
+    
+    func networkAddBookmark(){
+        
+    }
     
     
 

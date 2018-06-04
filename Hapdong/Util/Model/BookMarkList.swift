@@ -11,5 +11,5 @@ import Foundation
 struct BookMarkList: Codable {
     let store_name: String
     let store_img: String
-    let count: String
+    let reviewCnt: String
 }

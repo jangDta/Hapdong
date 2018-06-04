@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8pQ-OD-MeY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8pQ-OD-MeY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,26 +283,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-5h-5Ex">
-                                            <rect key="frame" x="80" y="31.5" width="20.5" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dq-5h-5Ex">
+                                            <rect key="frame" x="80" y="31.5" width="4" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvE-Ea-itL">
-                                            <rect key="frame" x="105.5" y="33.5" width="31" height="14.5"/>
+                                            <rect key="frame" x="89" y="33.5" width="31" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근사장님댓글 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0Q-Ns-0xA">
-                                            <rect key="frame" x="141.5" y="33.5" width="84" height="14.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0Q-Ns-0xA">
+                                            <rect key="frame" x="125" y="41" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진짜 존맛탱 보장해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crj-eX-HBL">
-                                            <rect key="frame" x="80" y="53.5" width="100.5" height="16.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crj-eX-HBL">
+                                            <rect key="frame" x="80" y="53.5" width="0.0" height="16.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1018,10 +1018,15 @@
                         <viewLayoutGuide key="safeArea" id="cK6-9Y-huY"/>
                     </view>
                     <navigationItem key="navigationItem" id="vdb-Y7-ZOw">
-                        <barButtonItem key="rightBarButtonItem" image="heartEmpty" id="BHU-WY-s0I"/>
+                        <barButtonItem key="rightBarButtonItem" image="heartEmpty" id="BHU-WY-s0I">
+                            <connections>
+                                <action selector="heartButtonClick:" destination="qRk-FB-ObT" id="V9G-kT-4YH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="container" destination="tNJ-UQ-5qh" id="j9i-t0-AE2"/>
+                        <outlet property="heartButton" destination="BHU-WY-s0I" id="3Hh-FA-pC8"/>
                         <outlet property="infoLabel" destination="f0k-q2-KLZ" id="RKw-rR-Jlw"/>
                         <outlet property="menuLabel" destination="bEq-0z-OKS" id="ynp-Mv-Ygd"/>
                         <outlet property="reviewLabel" destination="gPN-zl-pmu" id="zZe-Me-RkQ"/>
@@ -1214,6 +1219,7 @@
                         <viewLayoutGuide key="safeArea" id="Nmv-zh-bB4"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="Btj-3u-9jv" id="LEF-8H-BcJ"/>
                         <segue destination="ja2-KO-BaJ" kind="push" identifier="registerReviewSegue" id="cx0-kS-FbT"/>
                     </connections>
                 </viewController>
