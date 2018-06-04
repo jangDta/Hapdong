@@ -14,6 +14,7 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     var menuList : [StoreMenu]?
+    var store_idx = 14
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +51,7 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func networkMenu(){
-        let URL = "http://13.124.11.199:3000/store/menulist/14"
-        let header = [
-            "store_idx" : "14"
-        ]
+        let URL = "http://13.124.11.199:3000/store/menulist/\(store_idx)"
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData(){res in
             switch res.result{
@@ -63,7 +61,6 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
                     print("---------------0-----------------")
                     
                     print(JSON(value)["result"])
-                    print(JSON(value)["result"][0])
                     let decoder = JSONDecoder()
                     do {
                         print("----------------1-----------------")

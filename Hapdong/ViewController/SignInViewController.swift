@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var soptImage: UIImageView!
     
     let userdefault = UserDefaults.standard
     var isReady : Bool {
@@ -26,6 +27,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        damping()
         
     }
 
@@ -81,8 +83,13 @@ class SignInViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
-    
-    
+  
+    func damping(){
+        soptImage.transform = CGAffineTransform(scaleX: 0, y: 0)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.soptImage.transform = .identity
+        }, completion: nil)
+    }
 
 }
 

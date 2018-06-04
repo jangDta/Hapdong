@@ -46,10 +46,14 @@ class MarketTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: MarketTableViewCell.reuseIdentifier, for: indexPath) as! MarketTableViewCell
         
         cell.marketNameLabel.text = lists[indexPath.row].store_name
-        cell.reviewNumLabel.text = "최근리뷰 \(lists[indexPath.row].review_cnt)"
+        cell.reviewNumLabel.text = String(lists[indexPath.row].review_cnt)
         cell.marketImageView.kf.setImage(with: URL(string: lists[indexPath.row].store_img),placeholder: UIImage())
-
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 
     //TODO: 다음 뷰 인텐트로 넘기기
@@ -58,7 +62,7 @@ class MarketTableViewController: UITableViewController {
 //    }
     
     func listInit() {
-            let URL = "http://13.124.11.199:3000/main/list/\(category)"
+            let URL = "http://13.124.11.199:3000/main/list/"+category
         
             Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
                 switch res.result {
@@ -66,10 +70,11 @@ class MarketTableViewController: UITableViewController {
         
                         if let value = res.result.value {
         
-                            print("ㅇㄹㅇㄴㄹ\(JSON(value)["myPosts"][0].string)")
+                            print(JSON(value)["myPosts"])
                             let decoder = JSONDecoder()
         
                             do {
+                                print("---------------------1-----------------")
                                 let listData = try decoder.decode(ListData.self, from: value)
         
                                 if listData.message == "Successfully get list" {
@@ -79,6 +84,7 @@ class MarketTableViewController: UITableViewController {
                                 }
         
                             } catch {
+                                print("catch")
         
                             }
                         }
