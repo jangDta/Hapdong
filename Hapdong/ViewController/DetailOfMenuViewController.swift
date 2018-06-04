@@ -14,7 +14,7 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     var menuList : [StoreMenu]?
-    var store_idx = 14
+    var store_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +23,7 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
         
         tableView.delegate = self
         tableView.dataSource = self
+        print("-----------store idx : \(store_idx)----------")
         networkMenu()
 
     }

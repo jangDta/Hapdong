@@ -9,7 +9,7 @@
 import Foundation
 
 struct List: Codable {
-    let store_idx: String
+    let store_idx: Int
     let store_name: String
     let store_img: String
     let review_cnt: Int

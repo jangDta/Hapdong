@@ -57,9 +57,11 @@ class MarketTableViewController: UITableViewController {
     }
 
     //TODO: 다음 뷰 인텐트로 넘기기
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let datailVC = storyboard?.instantiateViewController(withIdentifier: MarketDetailViewController.reuseIdentifier) as! MarketDetailViewController
+       datailVC.store_idx = lists[indexPath.row].store_idx
+        self.navigationController?.pushViewController(datailVC, animated: true)
+    }
     
     func listInit() {
             let URL = "http://13.124.11.199:3000/main/list/"+category
