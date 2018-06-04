@@ -42,6 +42,9 @@ class MarketDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //네비게이션바 버튼 색깔
+        self.navigationController?.navigationBar.tintColor = UIColor.black;
+        
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(selectMenu1))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(selectMenu2))
         let tap3 = UITapGestureRecognizer(target: self, action: #selector(selectMenu3))

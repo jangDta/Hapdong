@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
+import SwiftyJSON
 
 class MarketTableViewController: UITableViewController {
 
+    var lists: [List] = [List]()
+    
+    var category: String = ""
+    var topTitle: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listInit()
+        print(category)
+        
+        //네비게이션바 버튼 색깔
+        self.navigationController?.navigationBar.tintColor = UIColor.black;
+        
+        self.navigationItem.title = topTitle
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,77 +37,65 @@ class MarketTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return lists.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: MarketTableViewCell.reuseIdentifier, for: indexPath) as! MarketTableViewCell
+        
+        cell.marketNameLabel.text = lists[indexPath.row].store_name
+        cell.reviewNumLabel.text = "최근리뷰 \(lists[indexPath.row].review_cnt)"
+        cell.marketImageView.kf.setImage(with: URL(string: lists[indexPath.row].store_img),placeholder: UIImage())
 
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    //TODO: 다음 뷰 인텐트로 넘기기
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//    }
     
-    
+    func listInit() {
+            let URL = "http://13.124.11.199:3000/main/list/\(category)"
+        
+            Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+                switch res.result {
+                    case .success:
+        
+                        if let value = res.result.value {
+        
+                            print("ㅇㄹㅇㄴㄹ\(JSON(value)["myPosts"][0].string)")
+                            let decoder = JSONDecoder()
+        
+                            do {
+                                let listData = try decoder.decode(ListData.self, from: value)
+        
+                                if listData.message == "Successfully get list" {
+                                    print("성공!")
+                                    self.lists = listData.myPosts //디코드해서 받아온 데이터
+                                    self.tableView.reloadData()
+                                }
+        
+                            } catch {
+        
+                            }
+                        }
+        
+                        break
+                    
+                    case .failure(let err):
+                        print(err.localizedDescription)
+                        break
+                }
+            }
+    }
     
     
     @IBAction func registerMarketClick(_ sender: Any) {
         performSegue(withIdentifier: "registerMarketSegue", sender: self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
