@@ -16,7 +16,7 @@ class MarketTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        marketImageView.layer.cornerRadius = marketImageView.frame.height/2
+        marketImageView.layer.cornerRadius = marketImageView.frame.width/2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

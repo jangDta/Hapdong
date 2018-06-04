@@ -688,11 +688,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ash-4g-wqN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="등록하기" id="ela-Xt-czq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UGy-Oy-o9w">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="등록하기" id="ela-Xt-czq"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="categoryTextField" destination="Fr8-3h-xaU" id="d9f-14-eSK"/>
@@ -856,7 +852,6 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pl7-0y-IB6">
                                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="Pl7-0y-IB6" secondAttribute="height" multiplier="1:1" id="R6x-Wj-faW"/>
                                                 <constraint firstAttribute="width" constant="60" id="yur-D7-APr"/>
                                             </constraints>
                                         </imageView>
@@ -875,13 +870,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3b0-kA-QZy">
                                             <rect key="frame" x="105.5" y="33.5" width="31" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근사장님댓글 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1U-Tu-Wsm">
                                             <rect key="frame" x="141.5" y="33.5" width="84" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛있으니까 주문 고고씽~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zer-hV-1N9">
@@ -896,6 +891,7 @@
                                                 <constraint firstAttribute="width" secondItem="AbW-3X-j3o" secondAttribute="height" multiplier="1:1" id="SUi-eD-tyv"/>
                                                 <constraint firstAttribute="width" constant="30" id="ngb-s2-Jua"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="&gt;">
                                                 <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -975,14 +971,14 @@
                                         <rect key="frame" x="130" y="0.0" width="125" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="리뷰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPN-zl-pmu">
                                         <rect key="frame" x="250" y="0.0" width="125" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVD-wc-u7p">
@@ -1001,7 +997,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.34967473149299622" green="0.75209850072860718" blue="0.66441088914871216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3496747315" green="0.75209850069999995" blue="0.66441088910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-UQ-5qh">
                                 <rect key="frame" x="0.0" y="106" width="375" height="512"/>
@@ -1012,7 +1008,7 @@
                         <viewLayoutGuide key="safeArea" id="cK6-9Y-huY"/>
                     </view>
                     <navigationItem key="navigationItem" id="vdb-Y7-ZOw">
-                        <barButtonItem key="rightBarButtonItem" title="HEART" id="BHU-WY-s0I"/>
+                        <barButtonItem key="rightBarButtonItem" image="heartEmpty" id="BHU-WY-s0I"/>
                     </navigationItem>
                     <connections>
                         <outlet property="container" destination="tNJ-UQ-5qh" id="j9i-t0-AE2"/>
@@ -1339,6 +1335,7 @@
         <image name="22" width="150" height="40"/>
         <image name="burger" width="32" height="32"/>
         <image name="food" width="32" height="32"/>
+        <image name="heartEmpty" width="35" height="35"/>
         <image name="home" width="25" height="25"/>
         <image name="like" width="25" height="25"/>
         <image name="pizza" width="32" height="32"/>

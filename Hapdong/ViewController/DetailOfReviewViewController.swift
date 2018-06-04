@@ -10,7 +10,7 @@ import UIKit
 
 class DetailOfReviewViewController: UIViewController {
 
-    //TODO: store_idx 값을 RegisterReviewViewController에게 넘겨주세염!!!!!!!!!!!!
+    var store_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,15 +23,5 @@ class DetailOfReviewViewController: UIViewController {
         performSegue(withIdentifier: "registerReviewSegue", sender: self)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

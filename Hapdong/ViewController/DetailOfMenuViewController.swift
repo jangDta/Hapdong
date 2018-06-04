@@ -57,7 +57,6 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData(){res in
             switch res.result{
             case .success:
-                print("suceess")
                 if let value = res.result.value{
                     print("---------------0-----------------")
                     
