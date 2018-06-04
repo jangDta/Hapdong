@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var chickenButton: UIButton!
     @IBOutlet weak var pizzaButton: UIButton!
     @IBOutlet weak var hamburgerButton: UIButton!
-    var selectedMenu = ""
+    
     let userDefault = UserDefaults.standard
     
     
@@ -27,29 +27,42 @@ class MainViewController: UIViewController {
     @IBAction func mainMenuClick(_ sender: UIButton) {
         switch sender{
         case koreanFoodButton:
-            selectedMenu = "한식"
+            
+            let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
+            marketVC.category = "korean"
+            marketVC.topTitle = "한식"
+            self.navigationController?.pushViewController(marketVC, animated: true)
+            
             break
         case chickenButton:
-            selectedMenu = "치킨"
+            
+            let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
+            marketVC.category = "chicken"
+            marketVC.topTitle = "치킨"
+            self.navigationController?.pushViewController(marketVC, animated: true)
+            
             break
         case pizzaButton:
-            selectedMenu = "피자"
+            
+            let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
+            marketVC.category = "pizza"
+            marketVC.topTitle = "피자"
+            self.navigationController?.pushViewController(marketVC, animated: true)
+            
             break
         case hamburgerButton:
-            selectedMenu = "햄버거"
+            
+            let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
+            marketVC.category = "night"
+            marketVC.topTitle = "야식"
+            self.navigationController?.pushViewController(marketVC, animated: true)
+            
             break
+            
         default:
             break
         }
-        performSegue(withIdentifier: "selectMenuSegue", sender: self)
+
     }
-    
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? MarketTableViewController{
-            destination.navigationItem.title = selectedMenu
-        }
-    }
-   
 
 }

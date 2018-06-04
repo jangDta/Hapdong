@@ -7,18 +7,32 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
+import SwiftyJSON
 
 class RegisterMarketViewController: UIViewController {
-
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var marketImageView: UIImageView!
+    @IBOutlet weak var menuNameTextField: UITextField!
+    @IBOutlet weak var menuPriceTextField: UITextField!
+    
     @IBOutlet weak var menuContentPlusTextField: UITextField!
     let pickerView = UIPickerView()
     var contentArr = ["기획", "디자인", "iOS", "Web", "Android", "Server"]
+    
+    let imagePicker : UIImagePickerController = UIImagePickerController()
+    
+    var stores: [Store] = [Store]()
+    let userdefault = UserDefaults()
     
     @IBOutlet weak var reviewScrollview: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         initPicker()
         
         //네비게이션바 버튼 색깔
@@ -31,8 +45,10 @@ class RegisterMarketViewController: UIViewController {
         singleTapGestureRecognizer.cancelsTouchesInView = false
         reviewScrollview.addGestureRecognizer(singleTapGestureRecognizer)
         
+        marketImageView.isUserInteractionEnabled = true
+    
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,7 +58,97 @@ class RegisterMarketViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func openImagePicker(_ sender: UITapGestureRecognizer) {
+        openGallery()
+    }
+    
+    
+    //MARK: 가게 등록(액션)
+    @IBAction func onRegister(_ sender: UIButton) {
+        if (categoryTextField.text?.isEmpty == true || nameTextField.text?.isEmpty == true || descriptionTextField.text?.isEmpty == true ||
+            menuNameTextField.text?.isEmpty == true || menuPriceTextField.text?.isEmpty == true) {
+            
+            let dialog = UIAlertController(title: "가게 등록 실패", message: "모든 항목을 입력하세요", preferredStyle: .alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+            dialog.addAction(action)
+            self.present(dialog, animated: true, completion: nil)
+        }
+            
+        else {
+            saveContent(category: categoryTextField.text!, name: nameTextField.text!, description: descriptionTextField.text!, menu: menuNameTextField.text!, price: menuPriceTextField.text!)
+        }
+    }
+    
+    // MARK: 글 저장(create)
+    func saveContent(category: String, name: String, description: String, menu: String, price: String) {
+        
+        if let img = marketImageView.image { //이미지가 있을 때
+            
+            StoreService.saveImageMarket(category: category, name: name, description: description, photo: img, menu: menu, price: price) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+            
+        else { //이미지가 없을 때
+            StoreService.saveMarket(category: category, name: name, description: description, menu: menu, price: price) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    
+    
 }
+
+// MARK: 이미지 첨부
+extension RegisterMarketViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // Method
+    @objc func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            self.imagePicker.sourceType = .photoLibrary
+            self.imagePicker.delegate = self
+            self.imagePicker.allowsEditing = true
+            self.present(self.imagePicker, animated: true, completion: { print("이미지 피커 나옴") })
+        }
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            self.imagePicker.sourceType = .camera
+            self.imagePicker.delegate = self
+            self.present(self.imagePicker, animated: true, completion: { print("이미지 피커 나옴") })
+        }
+    }
+    
+    // imagePickerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("사용자가 취소함")
+        self.dismiss(animated: true) {
+            print("이미지 피커 사라짐")
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //        defer {
+        //            self.dismiss(animated: true) {
+        //                print("이미지 피커 사라짐")
+        //            }
+        //        }
+        
+        if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            marketImageView.image = editedImage
+        } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            marketImageView.image = originalImage
+        }
+        
+        self.dismiss(animated: true) {
+            print("이미지 피커 사라짐")
+        }
+    }
+    
+}
+
 
 extension RegisterMarketViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     

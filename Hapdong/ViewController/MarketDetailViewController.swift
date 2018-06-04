@@ -13,11 +13,14 @@ class MarketDetailViewController: UIViewController {
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!
-    
     @IBOutlet weak var container: UIView!
+    
+    var store_idx = 0
+    
     private lazy var detailOfMenuViewController: DetailOfMenuViewController = {
        
         var viewController = storyboard?.instantiateViewController(withIdentifier: "DetailOfMenuViewController") as! DetailOfMenuViewController
+        viewController.store_idx = self.store_idx
         
         self.addChildViewController(viewController)
         return viewController
@@ -41,6 +44,9 @@ class MarketDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //네비게이션바 버튼 색깔
+        self.navigationController?.navigationBar.tintColor = UIColor.black;
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(selectMenu1))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(selectMenu2))

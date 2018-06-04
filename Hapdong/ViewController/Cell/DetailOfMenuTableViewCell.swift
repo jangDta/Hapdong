@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class DetailOfMenuTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var menuNameLabel: UILabel!
     @IBOutlet weak var menuPriceLabel: UILabel!
     

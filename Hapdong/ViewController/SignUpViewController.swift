@@ -23,6 +23,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //네비게이션바 버튼 색깔
+        self.navigationController?.navigationBar.tintColor = UIColor.black;
 
     }
 
