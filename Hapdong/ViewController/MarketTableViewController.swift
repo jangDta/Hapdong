@@ -73,14 +73,14 @@ class MarketTableViewController: UITableViewController {
                 
                 if let value = res.result.value {
                     
-                    print(JSON(value)["myPosts"])
+                    //print(JSON(value)["myPosts"])
                     let decoder = JSONDecoder()
                     
                     do {
                         let listData = try decoder.decode(ListData.self, from: value)
                         
                         if listData.message == "Successfully get list" {
-                            self.lists = listData.myPosts //디코드해서 받아온 데이터
+                            self.lists = listData.myPosts
                             self.tableView.reloadData()
                         }
                         

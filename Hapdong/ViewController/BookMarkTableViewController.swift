@@ -19,8 +19,13 @@ class BookMarkTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         bookMarkListInit()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        bookMarkListInit()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +39,7 @@ class BookMarkTableViewController: UITableViewController {
         
         cell.marketNameLabel.text = bookmarks[indexPath.row].store_name
         cell.marketImageView.kf.setImage(with: URL(string: bookmarks[indexPath.row].store_img),placeholder: UIImage())
-        cell.reviewNumLabel.text = bookmarks[indexPath.row].reviewCnt
+        cell.reviewNumLabel.text = "\(bookmarks[indexPath.row].reviewCnt)"
 
         return cell
     }

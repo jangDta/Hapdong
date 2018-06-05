@@ -19,11 +19,13 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         //네비게이션바 버튼 색깔
         self.navigationController?.navigationBar.tintColor = UIColor.black;
         networkReview()
-        print(reviews.count)
-
+        
     }
 
     @IBAction func registerReviewClick(_ sender: Any) {
@@ -39,8 +41,9 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailOfReviewTableViewCell.reuseIdentifier) as! DetailOfReviewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailOfReviewTableViewCell") as! DetailOfReviewTableViewCell
         cell.reviewImageView.kf.setImage(with: URL(string: reviews[indexPath.row].review_img),placeholder: UIImage())
+        cell.idLabel.text = reviews[indexPath.row].user_id
         cell.reviewTextView.text = reviews[indexPath.row].review_content
         cell.writeTimeLabel.text = reviews[indexPath.row].review_writetime
         
@@ -48,7 +51,7 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 280
+        return 300
     }
     
     func networkReview(){
@@ -66,6 +69,8 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
                         print("----------------1리뷰-----------------")
                         let reviewListData = try decoder.decode(ReviewListData.self, from: value)
                         self.reviews = reviewListData.result
+                        print(self.reviews.count)
+                        //print(self.reviews[0].review_content)
                         self.tableView.reloadData()
                     }catch{
                         print("catch")
@@ -79,7 +84,5 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
     }
-    
-    
 
 }
