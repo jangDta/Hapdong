@@ -9,14 +9,14 @@
 import UIKit
 
 class RegisterReviewViewController: UIViewController {
-    @IBOutlet weak var categoryTextField: UITextField!
-    @IBOutlet weak var contentTextField: UITextField!
+    
+    @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var reviewImageView: UIImageView!
     
     let imagePicker : UIImagePickerController = UIImagePickerController()
     
     //TODO: 전 뷰에서 인텐트로 받아오기
-    var store_idx: String = "15"
+    var store_idx: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +33,13 @@ class RegisterReviewViewController: UIViewController {
         self.view.endEditing(true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     @IBAction func openImagePicker(_ sender: UITapGestureRecognizer) {
         openGallery()
     }
     
     @IBAction func onRegister(_ sender: UIButton) {
         
-        if (categoryTextField.text?.isEmpty == true || contentTextField.text?.isEmpty == true) {
+        if (contentTextView.text?.isEmpty)! {
             
             let dialog = UIAlertController(title: "리뷰 등록 실패", message: "모든 항목을 입력하세요", preferredStyle: .alert)
             let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
@@ -52,8 +48,7 @@ class RegisterReviewViewController: UIViewController {
         }
         
         else {
-            print("click")
-            saveReview(content: contentTextField.text!, store_idx: store_idx)
+            saveReview(content: contentTextView.text!, store_idx: store_idx)
         }
     }
     

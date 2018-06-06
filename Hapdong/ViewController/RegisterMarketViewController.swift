@@ -33,6 +33,8 @@ class RegisterMarketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contentArr += ["예은이의","정성을","주석할수","없었습니다"]
+        
         initPicker()
         
         //네비게이션바 버튼 색깔

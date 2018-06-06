@@ -27,10 +27,15 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
         networkReview()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        networkReview()
+    }
 
     @IBAction func registerReviewClick(_ sender: Any) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: RegisterReviewViewController.reuseIdentifier) as! RegisterReviewViewController
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: RegisterReviewViewController.reuseIdentifier) as! RegisterReviewViewController
+        vc.store_idx = "\(store_idx)"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
