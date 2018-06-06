@@ -1098,7 +1098,7 @@
                                     <constraint firstAttribute="height" constant="462" id="O4x-72-U2E"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailOfReviewTableViewCell" rowHeight="300" id="Gqh-gf-bOG" customClass="DetailOfReviewTableViewCell" customModule="Hapdong" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailOfReviewTableViewCell" rowHeight="300" id="Gqh-gf-bOG" customClass="DetailOfReviewTableViewCell" customModule="Hapdong" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gqh-gf-bOG" id="m8W-yo-uTb">

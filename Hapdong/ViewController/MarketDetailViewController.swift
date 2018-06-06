@@ -19,8 +19,7 @@ class MarketDetailViewController: UIViewController {
     @IBOutlet weak var heartButton: UIBarButtonItem!
     
     let userDefault = UserDefaults.standard
-    var bookmarks = [BookMarkList]()
-    
+    var myBookmarks = [String]()
     
     var store_name = ""
     var store_idx = 0
@@ -55,7 +54,8 @@ class MarketDetailViewController: UIViewController {
         super.viewDidLoad()
         
         checkBookmark()
-        print("length :\(bookmarks.count)")
+        
+        
     
         
         //네비게이션바 버튼 색깔
@@ -98,7 +98,6 @@ class MarketDetailViewController: UIViewController {
     
     @IBAction func heartButtonClick(_ sender: Any) {
         networkAddBookmark()
-        print("heart!!")
     }
     
     func networkAddBookmark(){
@@ -136,15 +135,19 @@ class MarketDetailViewController: UIViewController {
             switch res.result{
             case .success:
                 if let value = res.result.value{
-                    print("---------------0-----------------")
                     
-                    print(JSON(value)["msg"])
+                    //print(JSON(value)["msg"])
                     if JSON(value)["msg"] == "Successfully get list"{
                         let decoder = JSONDecoder()
                         do {
-                            print("----------------1-----------------")
                             let bookmarkListData = try decoder.decode(BookMarkListData.self, from: value)
-                            self.bookmarks = bookmarkListData.list
+                            for i in 0..<bookmarkListData.list.count{
+                                self.myBookmarks.append(bookmarkListData.list[i].store_name)
+                                // 내 북마크 담기
+                            }
+                            if self.myBookmarks.contains(self.store_name){
+                                self.heartButton.image = #imageLiteral(resourceName: "heart")
+                            }
                         }catch{
                             print("catch")
                         }
@@ -160,17 +163,5 @@ class MarketDetailViewController: UIViewController {
         }
         
     }
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

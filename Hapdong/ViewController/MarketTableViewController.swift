@@ -47,6 +47,7 @@ class MarketTableViewController: UITableViewController {
         
         cell.marketNameLabel.text = lists[indexPath.row].store_name
         cell.reviewNumLabel.text = String(lists[indexPath.row].review_cnt)
+        
         cell.marketImageView.kf.setImage(with: URL(string: lists[indexPath.row].store_img),placeholder: UIImage())
         
         return cell

@@ -19,12 +19,7 @@ class DetailOfInfoViewController: UIViewController {
 
         //네비게이션바 버튼 색깔
         self.navigationController?.navigationBar.tintColor = UIColor.black;
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 }

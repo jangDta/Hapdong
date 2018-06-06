@@ -60,17 +60,23 @@ class DetailOfMenuViewController: UIViewController, UITableViewDelegate, UITable
                 if let value = res.result.value{
                     print("---------------0-----------------")
                     
-                    print(JSON(value)["result"])
-                    let decoder = JSONDecoder()
-                    do {
-                        print("----------------1-----------------")
-                        let storeMenuData = try decoder.decode(StoreMenuData.self, from: value)
-                        self.menuList = storeMenuData.result
-                        self.tableView.reloadData()
-                    }catch{
-                        print("catch")
+                    if JSON(value)["message"] == "no menu"{
+                        print("no menu")
+                    }else{
+                        print(JSON(value)["result"])
+                        let decoder = JSONDecoder()
+                        do {
+                            print("----------------1-----------------")
+                            let storeMenuData = try decoder.decode(StoreMenuData.self, from: value)
+                            self.menuList = storeMenuData.result
+                            self.tableView.reloadData()
+                        }catch{
+                            print("catch")
+                        }
                     }
-                }
+                    }
+                    
+                    
                 
                 break
             case .failure(let err):

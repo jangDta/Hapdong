@@ -29,7 +29,8 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     @IBAction func registerReviewClick(_ sender: Any) {
-        performSegue(withIdentifier: "registerReviewSegue", sender: self)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: RegisterReviewViewController.reuseIdentifier) as! RegisterReviewViewController
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
