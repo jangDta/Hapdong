@@ -71,14 +71,15 @@ struct ReviewService: APIService {
             
             switch encodingResult {
             case .success(request: let upload, streamingFromDisk: _, streamFileURL: _) :
-                
+                print("hhhhhhhhhhhhhhhhhhhhh1")
                 upload.responseData(completionHandler: {(res) in
                     switch res.result {
                     case .success :
-                        
+                        print("hhhhhhhhhhhhhhhhhhhhh2")
                         if let value = res.result.value {
+                            print(value)
                             let message = JSON(value)["message"].string
-                            
+                            print(message)
                             if message == "Successful Register Board Data" {
                                 print("이미지 업로드 성공")
                                 completion()

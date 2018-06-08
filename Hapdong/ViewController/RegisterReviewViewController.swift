@@ -48,6 +48,7 @@ class RegisterReviewViewController: UIViewController {
         }
         
         else {
+            print("click")
             saveReview(content: contentTextView.text!, store_idx: store_idx)
         }
     }
