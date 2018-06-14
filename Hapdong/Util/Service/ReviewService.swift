@@ -14,7 +14,7 @@ import UIKit
 struct ReviewService: APIService {
     
     //MARK: 리뷰 등록(create) - 이미지 무
-    static func saveReview(content: String, store_idx: String, completion: @escaping ()->Void) {
+    static func saveReview(content: String, store_idx: Int, completion: @escaping ()->Void) {
         
         let URL = url("/store/addreview")
         
@@ -23,7 +23,7 @@ struct ReviewService: APIService {
         
         let body: [String: Any] = [
             "content" : content,
-            "user_id" : id,
+            "id" : id,
             "store_idx" : store_idx
         ]
         
@@ -49,7 +49,7 @@ struct ReviewService: APIService {
     }
     
     //MARK: 리뷰 등록(create) - 이미지 유
-    static func saveImageReview(content: String, photo: UIImage, store_idx: String, completion: @escaping ()->Void) {
+    static func saveImageReview(content: String, photo: UIImage, store_idx: Int, completion: @escaping ()->Void) {
         let URL = url("/store/addreview")
         
         let userdefault = UserDefaults.standard
@@ -58,14 +58,14 @@ struct ReviewService: APIService {
         let contentData = content.data(using: .utf8)
         let photoData = UIImageJPEGRepresentation(photo, 0.3)
         let idData = id.data(using: .utf8)
-        let storeIdxData = store_idx.data(using: .utf8)
+        let storeIdxData = String(store_idx).data(using: .utf8)
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             
             multipartFormData.append(contentData!, withName: "content")
             multipartFormData.append(photoData!, withName: "image", fileName: "photo.jpg", mimeType: "image/jpeg")
-            multipartFormData.append(idData!, withName: "user_id")
-            multipartFormData.append(storeIdxData!, withName: "store_idx")
+            multipartFormData.append(idData!, withName: "id")
+            multipartFormData.append("\(store_idx)".data(using: .utf8)!, withName: "store_idx")
             
         }, to: URL, method: .post, headers: nil ) { (encodingResult) in
             
@@ -77,9 +77,9 @@ struct ReviewService: APIService {
                     case .success :
                         print("hhhhhhhhhhhhhhhhhhhhh2")
                         if let value = res.result.value {
-                            print(value)
                             let message = JSON(value)["message"].string
-                            print(message)
+                            print("ㄴㄴ\(message)")
+                            print(id)
                             if message == "Successful Register Board Data" {
                                 print("이미지 업로드 성공")
                                 completion()

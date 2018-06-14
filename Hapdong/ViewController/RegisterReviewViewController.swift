@@ -16,16 +16,16 @@ class RegisterReviewViewController: UIViewController {
     let imagePicker : UIImagePickerController = UIImagePickerController()
     
     //TODO: 전 뷰에서 인텐트로 받아오기
-    var store_idx: String = ""
+    var store_idx: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //네비게이션바 버튼 색깔
         self.navigationController?.navigationBar.tintColor = UIColor.black;
-
         
-       reviewImageView.isUserInteractionEnabled = true
+        print("랄라\(store_idx)")
+    
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -53,9 +53,9 @@ class RegisterReviewViewController: UIViewController {
         }
     }
     
-    func saveReview(content: String, store_idx: String) {
+    func saveReview(content: String, store_idx: Int) {
         if let img = reviewImageView.image { //이미지가 있을 때
-            
+            print(store_idx)
             ReviewService.saveImageReview(content: content, photo: img, store_idx: store_idx) {
                 print("성공")
                 self.navigationController?.popViewController(animated: true)
@@ -99,7 +99,7 @@ extension RegisterReviewViewController: UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //        defer {
         //            self.dismiss(animated: true) {
         //                print("이미지 피커 사라짐")
