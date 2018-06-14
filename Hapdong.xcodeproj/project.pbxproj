@@ -122,11 +122,11 @@
 		2259FDFA20C44DF400CFD46B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CC7820BD20C4179500DC187F /* StoreMenuData.swift */,
 				CC7820BB20C4172F00DC187F /* StoreMenu.swift */,
-				2259FE0D20C452D600CFD46B /* Review.swift */,
+				CC7820BD20C4179500DC187F /* StoreMenuData.swift */,
 				2259FE1320C45E5B00CFD46B /* List.swift */,
 				2259FE1520C45E6300CFD46B /* ListData.swift */,
+				2259FE0D20C452D600CFD46B /* Review.swift */,
 				2259FE0F20C453D500CFD46B /* ReviewData.swift */,
 				CC4AFB8320C4DE90005C9CCF /* Store.swift */,
 				CC4AFB8520C4DEC2005C9CCF /* StoreData.swift */,
@@ -141,8 +141,8 @@
 		2259FDFB20C44DF900CFD46B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2259FE0220C44E5E00CFD46B /* StoreService.swift */,
 				2259FE0120C44E5E00CFD46B /* APIService.swift */,
+				2259FE0220C44E5E00CFD46B /* StoreService.swift */,
 				2259FE1120C453F600CFD46B /* ReviewService.swift */,
 			);
 			path = Service;
@@ -531,7 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Y3DL2X5B3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hapdong/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hi.com.Hapdong;
@@ -547,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Y3DL2X5B3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hapdong/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hi.com.Hapdong;

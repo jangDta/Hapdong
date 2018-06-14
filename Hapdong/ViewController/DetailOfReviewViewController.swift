@@ -12,10 +12,12 @@ import SwiftyJSON
 import Kingfisher
 
 class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var store_idx = 0
+    
     @IBOutlet weak var tableView: UITableView!
+    
     var reviews = [ReviewList]()
+    var store_idx = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +36,7 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
 
     @IBAction func registerReviewClick(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: RegisterReviewViewController.reuseIdentifier) as! RegisterReviewViewController
-        vc.store_idx = "\(store_idx)"
+        vc.store_idx = store_idx
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -50,7 +52,7 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailOfReviewTableViewCell") as! DetailOfReviewTableViewCell
         cell.reviewImageView.kf.setImage(with: URL(string: reviews[indexPath.row].review_img),placeholder: UIImage())
         cell.idLabel.text = reviews[indexPath.row].user_id
-        cell.reviewTextView.text = reviews[indexPath.row].review_content
+        cell.contentLabel.text = reviews[indexPath.row].review_content
         cell.writeTimeLabel.text = reviews[indexPath.row].review_writetime
         
         return cell

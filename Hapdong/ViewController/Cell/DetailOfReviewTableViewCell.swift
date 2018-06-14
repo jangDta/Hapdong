@@ -13,7 +13,8 @@ class DetailOfReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var writeTimeLabel: UILabel!
     @IBOutlet weak var reviewImageView: UIImageView!
-    @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var contentLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

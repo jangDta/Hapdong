@@ -11,6 +11,6 @@ import Foundation
 struct Review: Codable {
     let content: String
     let image: String
-    let user_id: String
+    let id: String
     let store_idx: Int
 }

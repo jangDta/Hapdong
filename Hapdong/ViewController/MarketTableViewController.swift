@@ -85,6 +85,13 @@ class MarketTableViewController: UITableViewController {
                             self.tableView.reloadData()
                         }
                         
+                        else {
+                            let dialog = UIAlertController(title: "조회 실패", message: "Please input category name", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                            dialog.addAction(action)
+                            self.present(dialog, animated: true, completion: nil)
+                        }
+                        
                     } catch {
                         print("catch")
                         
