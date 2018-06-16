@@ -12,9 +12,12 @@ import SwiftyJSON
 
 class MarketDetailViewController: UIViewController {
     
-    @IBOutlet weak var menuLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var reviewLabel: UILabel!
+    
+    @IBOutlet weak var menuBar: UIStackView!
+    @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var infoBtn: UIButton!
+    @IBOutlet weak var reviewBtn: UIButton!
+    
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var heartButton: UIBarButtonItem!
     
@@ -24,12 +27,24 @@ class MarketDetailViewController: UIViewController {
     var store_name = ""
     var store_idx = 0
     
+    @IBAction func menuAction(_ sender: UIButton) {
+        updateView(selected: 0)
+    }
+    
+    @IBAction func infoAction(_ sender: UIButton) {
+        updateView(selected: 1)
+    }
+
+    @IBAction func reviewAction(_ sender: UIButton) {
+        updateView(selected: 2)
+    }
+    
     private lazy var detailOfMenuViewController: DetailOfMenuViewController = {
         
         var viewController = storyboard?.instantiateViewController(withIdentifier: "DetailOfMenuViewController") as! DetailOfMenuViewController
         viewController.store_idx = self.store_idx
         
-        self.addChildViewController(viewController)
+        self.add(asChildViewController: viewController)
         return viewController
     }()
     
@@ -37,7 +52,7 @@ class MarketDetailViewController: UIViewController {
         
         var viewController = storyboard?.instantiateViewController(withIdentifier: "DetailOfInfoViewController") as! DetailOfInfoViewController
         
-        self.addChildViewController(viewController)
+        self.add(asChildViewController: viewController)
         return viewController
     }()
     
@@ -46,7 +61,7 @@ class MarketDetailViewController: UIViewController {
         var viewController = storyboard?.instantiateViewController(withIdentifier: "DetailOfReviewViewController") as! DetailOfReviewViewController
         viewController.store_idx = self.store_idx
         
-        self.addChildViewController(viewController)
+        self.add(asChildViewController: viewController)
         return viewController
     }()
     
@@ -55,43 +70,46 @@ class MarketDetailViewController: UIViewController {
         
         checkBookmark()
         
-        
+        setupView()
     
         
         //네비게이션바 버튼 색깔
         self.navigationController?.navigationBar.tintColor = UIColor.black;
         self.navigationItem.title = store_name
         
-        let tap1 = UITapGestureRecognizer(target: self, action: #selector(selectMenu1))
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(selectMenu2))
-        let tap3 = UITapGestureRecognizer(target: self, action: #selector(selectMenu3))
-        menuLabel.addGestureRecognizer(tap1)
-        infoLabel.addGestureRecognizer(tap2)
-        reviewLabel.addGestureRecognizer(tap3)
+//        let tap1 = UITapGestureRecognizer(target: self, action: #selector(selectMenu1))
+//        let tap2 = UITapGestureRecognizer(target: self, action: #selector(selectMenu2))
+//        let tap3 = UITapGestureRecognizer(target: self, action: #selector(selectMenu3))
+//        menuBtn.addGestureRecognizer(tap1)
+//        infoBtn.addGestureRecognizer(tap2)
+//        reviewBtn.addGestureRecognizer(tap3)
+//
+//        container.addSubview(detailOfMenuViewController.view)
         
-        container.addSubview(detailOfMenuViewController.view)
+        detailOfMenuViewController.view.frame = container.bounds
+        detailOfMenuViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
     }
     @objc func selectMenu1(){
-        menuLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        infoLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        reviewLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        menuBtn.titleLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        infoBtn.titleLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        reviewBtn.titleLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         container.addSubview(detailOfMenuViewController.view)
         
     }
     
     @objc func selectMenu2(){
-        menuLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        infoLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        reviewLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        menuBtn.titleLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        infoBtn.titleLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        reviewBtn.titleLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         container.addSubview(detailOfInfoViewController.view)
         
     }
     
     @objc func selectMenu3(){
-        menuLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        infoLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        reviewLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        menuBtn.titleLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        infoBtn.titleLabel?.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        reviewBtn.titleLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         container.addSubview(detailOfReviewViewController.view)
         
     }
@@ -163,5 +181,55 @@ class MarketDetailViewController: UIViewController {
         }
         
     }
+    
+    private func add(asChildViewController viewController: UIViewController) {
+        
+        // Add Child View Controller
+        addChildViewController(viewController)
+        
+        // Add Child View as Subview
+        container.addSubview(viewController.view)
+        
+        // Configure Child View
+        viewController.view.frame = container.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // Notify Child View Controller
+        viewController.didMove(toParentViewController: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController) {
+        // Notify Child View Controller
+        viewController.willMove(toParentViewController: nil)
+        
+        // Remove Child View From Superview
+        viewController.view.removeFromSuperview()
+        
+        // Notify Child View Controller
+        viewController.removeFromParentViewController()
+    }
+    
+    @objc private func updateView(selected : Int) {
+        if selected == 0 {
+            remove(asChildViewController: detailOfInfoViewController)
+            remove(asChildViewController: detailOfReviewViewController)
+            add(asChildViewController: detailOfMenuViewController)
+        } else if selected == 1 {
+            remove(asChildViewController: detailOfMenuViewController)
+            remove(asChildViewController: detailOfReviewViewController)
+            add(asChildViewController: detailOfInfoViewController)
+        } else {
+            remove(asChildViewController: detailOfMenuViewController)
+            remove(asChildViewController: detailOfInfoViewController)
+            add(asChildViewController: detailOfReviewViewController)
+        }
+    }
+    
+    func setupView() {
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.topAnchor.constraint(equalTo: menuBar.bottomAnchor).isActive = true
+        updateView(selected: 0)
+    }
+
     
 }

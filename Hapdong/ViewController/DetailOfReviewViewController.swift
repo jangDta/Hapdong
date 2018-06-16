@@ -27,7 +27,7 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
         //네비게이션바 버튼 색깔
         self.navigationController?.navigationBar.tintColor = UIColor.black;
         networkReview()
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +63,7 @@ class DetailOfReviewViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func networkReview(){
-        let URL = "http://13.124.11.199:3000/store/review/\(store_idx)"
+        let URL = "http://13.124.143.2:3011/store/review/\(store_idx)"
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData(){res in
             switch res.result{

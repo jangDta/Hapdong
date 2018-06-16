@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signUpClick(_ sender: Any) {
         if isReady{
-            let URL = "http://13.124.11.199:3000/user/signup"
+            let URL = "http://13.124.143.2:3011/user/signup"
             let body: [String: Any] = [
                 "user_id" : gsno(idTextField.text),
                 "user_pw" : gsno(pwTextField.text)
