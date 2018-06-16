@@ -49,7 +49,7 @@ class BookMarkTableViewController: UITableViewController {
     }
  
     func bookMarkListInit() {
-        let URL = "http://13.124.11.199:3000/bookmark/list/"+userDefault.string(forKey: "user_id")!
+        let URL = "http://13.124.143.2:3011/bookmark/list/"+userDefault.string(forKey: "user_id")!
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData(){res in
             switch res.result{

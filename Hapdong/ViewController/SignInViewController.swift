@@ -33,7 +33,7 @@ class SignInViewController: UIViewController {
 
     @IBAction func signInClick(_ sender: Any) {
         if isReady{
-            let URL = "http://13.124.11.199:3000/user/signin"
+            let URL = "http://13.124.143.2:3011/user/signin"
             let body: [String: Any] = [
                 "user_id" : gsno(idTextField.text),
                 "user_pw" : gsno(pwTextField.text)
