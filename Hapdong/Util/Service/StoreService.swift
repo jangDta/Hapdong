@@ -15,7 +15,7 @@ struct StoreService: APIService {
     
     //TODO : 유저디폴트 키 값 변경
     //MARK: 가게 등록(create) - 서버 통신, 이미지 무
-    static func saveMarket(category: String, name: String, description: String, menu: String, price: String, completion: @escaping ()->Void) {
+    static func saveMarket(category: String, name: String, description: String, menu: String, price: String, completion: @escaping (_ message: String)->Void) {
         let URL = url("/store/add")
         
         let userdefault = UserDefaults.standard
@@ -43,7 +43,10 @@ struct StoreService: APIService {
                         let storeData = try decoder.decode(StoreData.self, from: value)
                         
                         if storeData.message == "Successful Register Board Data" {
-                            completion()
+                            completion("success")
+                        }
+                        else {
+                            completion("server")
                         }
                     }catch {
                         
@@ -60,7 +63,7 @@ struct StoreService: APIService {
 
     //TODO : 유저디폴트 키 값 변경
     //MARK: 가게 등록(create) - 서버 통신, 이미지 유
-    static func saveImageMarket(category: String, name: String, description: String, photo: UIImage, menu: String, price: String, completion: @escaping ()->Void) {
+    static func saveImageMarket(category: String, name: String, description: String, photo: UIImage, menu: String, price: String, completion: @escaping (_ message: String)->Void) {
         let URL = url("/store/add")
 
         
@@ -99,7 +102,10 @@ struct StoreService: APIService {
                             
                             if message == "Successful Register Board Data" {
                                 print("이미지 업로드 성공")
-                                completion()
+                                completion("success")
+                            }
+                            else {
+                                completion("server")
                             }
                         }
                         

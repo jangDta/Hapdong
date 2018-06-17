@@ -18,6 +18,10 @@ class MarketTableViewController: UITableViewController {
     var category: String = ""
     var topTitle: String = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        listInit()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

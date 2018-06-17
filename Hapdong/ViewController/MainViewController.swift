@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
             
             let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
             marketVC.category = "korean"
-            marketVC.topTitle = "한식"
+            marketVC.topTitle = "korean"
             self.navigationController?.pushViewController(marketVC, animated: true)
             
             break
@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
             
             let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
             marketVC.category = "chicken"
-            marketVC.topTitle = "치킨"
+            marketVC.topTitle = "chicken"
             self.navigationController?.pushViewController(marketVC, animated: true)
             
             break
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
             
             let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
             marketVC.category = "pizza"
-            marketVC.topTitle = "피자"
+            marketVC.topTitle = "pizza"
             self.navigationController?.pushViewController(marketVC, animated: true)
             
             break
@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
             
             let marketVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MarketTableViewController") as! MarketTableViewController
             marketVC.category = "night"
-            marketVC.topTitle = "야식"
+            marketVC.topTitle = "night"
             self.navigationController?.pushViewController(marketVC, animated: true)
             
             break
