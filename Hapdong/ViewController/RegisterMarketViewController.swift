@@ -21,7 +21,8 @@ class RegisterMarketViewController: UIViewController {
     
     @IBOutlet weak var menuContentPlusTextField: UITextField!
     let pickerView = UIPickerView()
-    var contentArr = ["기획", "디자인", "iOS", "Web", "Android", "Server"]
+   // var contentArr = ["기획", "디자인", "iOS", "Web", "Android", "Server"]
+    var categoryArr = ["korean", "chicken", "pizza", "night"]
     
     let imagePicker : UIImagePickerController = UIImagePickerController()
     
@@ -33,7 +34,7 @@ class RegisterMarketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentArr += ["예은이의","정성을","주석할수","없었습니다"]
+        //contentArr += ["예은이의","정성을","주석할수","없었습니다"]
         
         initPicker()
         
@@ -86,20 +87,35 @@ class RegisterMarketViewController: UIViewController {
         
         if let img = marketImageView.image { //이미지가 있을 때
             
-            StoreService.saveImageMarket(category: category, name: name, description: description, photo: img, menu: menu, price: price) {
+            StoreService.saveImageMarket(category: category, name: name, description: description, photo: img, menu: menu, price: price) { (message) in
+                if message == "success" {
+                    
                 self.navigationController?.popViewController(animated: true)
+                    
+                }
+                else {
+                    let dialog = UIAlertController(title: "서버 에러", message: "통신 상태를 확인해주세요.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                    dialog.addAction(action)
+                    self.present(dialog, animated: true, completion: nil)
+                }
             }
         }
             
         else { //이미지가 없을 때
-            StoreService.saveMarket(category: category, name: name, description: description, menu: menu, price: price) {
-                self.navigationController?.popViewController(animated: true)
+            StoreService.saveMarket(category: category, name: name, description: description, menu: menu, price: price) { (message) in
+                if message == "success" {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                else {
+                    let dialog = UIAlertController(title: "서버 에러", message: "통신 상태를 확인해주세요.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                    dialog.addAction(action)
+                    self.present(dialog, animated: true, completion: nil)
+                }
             }
         }
     }
-    
-    
-    
 }
 
 // MARK: 이미지 첨부
@@ -159,8 +175,8 @@ extension RegisterMarketViewController: UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        setTextfieldView(textField: menuContentPlusTextField, selector: #selector(selectedPicker), inputView: pickerView)
-        
+        setTextfieldView(textField: categoryTextField, selector: #selector(selectedPicker), inputView: pickerView)
+    
     }
     
     //UIPickerViewDelegate
@@ -171,13 +187,13 @@ extension RegisterMarketViewController: UIPickerViewDelegate, UIPickerViewDataSo
     //UIPickerViewDelegate
     //컴포넌트 당 row 가 몇개가 될 것인가
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return contentArr.count
+        return categoryArr.count
     }
     
     ///UIPickerViewDataSource 위한 것
     //각각의 row 에 어떠한 내용이 들어갈 것인가
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return contentArr[row]
+        return categoryArr[row]
         
     }
     
@@ -206,11 +222,12 @@ extension RegisterMarketViewController: UIPickerViewDelegate, UIPickerViewDataSo
         
         let row = pickerView.selectedRow(inComponent: 0)
         
-        menuContentPlusTextField.text = contentArr[row]
+        categoryTextField.text = categoryArr[row]
         
         view.endEditing(true)
     }
     
 }
+
 
 
